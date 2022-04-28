@@ -1,0 +1,332 @@
+body {
+  font-family: "Ubuntu";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: $grey;
+  -webkit-font-smoothing: antialiased;
+}
+textarea:focus,
+input:focus,
+*:focus {
+  outline: none;
+}
+script {
+	height: 0;
+	overflow: none;
+}
+.form-control {   
+  /* Remove First */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;  
+}
+.bg-cover {
+	background-size: cover;
+	background-position: center center;
+}
+
+input[type=text],
+input[type=email],
+input[type=user],
+input[type=password],
+textarea {   
+    /* Remove First */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;   
+}
+
+.dropdown-toggle::after {
+  margin-left: 0;
+}
+
+.img-rounded {
+	width: 100%;
+	padding-top: 100%;
+	border-radius: 1000px;
+	background-size: cover;
+	background-position: center center;
+}
+h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
+	font-weight: 700;
+	font-family: "Open Sans Condensed";
+	text-transform: uppercase;
+	color: $darkgrey;
+}
+.altfont, blockquote {
+	font-weight: 700;
+	font-family: "Open Sans Condensed";
+}
+blockquote {
+	margin: 30px 0;
+	border-left: 3px solid $blue;
+	padding-left: 30px;
+}
+h1, .h1 {
+  font-size: 60px;
+  line-height: 50px;
+  margin-bottom: 30px;
+}
+h2, .h2 {
+  font-size: 30px;
+  line-height: 29px;
+  margin-bottom: 30px;
+}
+h3, .h3 {
+  font-size: 24px;
+  line-height: 24px;
+  margin-bottom: 30px;
+}
+h4, .h4 {
+  font-size: 20px;
+  line-height: 20px;  
+  margin-bottom: 20px;
+}
+h5, .h5 {
+  font-size: 17px;
+  line-height: 26px;  
+  margin-bottom: 20px;
+}
+h6, .h6 {
+  font-size: 15px;
+  line-height: 22px;  
+  margin-bottom: 20px;
+}
+.lead {
+  font-size: 17px;
+  line-height: 27px;  
+  margin-bottom: 30px;
+}
+
+p + h2, p + h3, p + h4, p + h5,
+ul + h2, ul + h3, ul + h4, ul + h5,
+ol + h2, ol + h3, ol + h4, ol + h5 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+.wp-block-image a[href]:hover {
+	&:after {
+		display: none !important;
+	}
+}
+.rood .content-wrapper, .blauw .content-wrapper .rood {
+	a:not(.btn) {
+	  color: $red;
+	  transition: 0.15s ease-in;
+	  position: relative;	  
+    &:after {
+	    position: absolute;
+	    bottom: -4px;
+	    left: 0;
+	    content: '';
+	    height: 2px;
+	    background: $blue;
+	    width: 0%;
+	    transition: 0.15s ease-in-out;
+    }
+	  &:hover {
+	    color: $red;
+	    text-decoration: none;
+	    &:after {
+		    width: 100%;
+	    }
+	  }
+	  &:active, &:focus, &:target {
+	    color: $red;
+	  }
+	}
+}
+
+.blauw .content-wrapper, .rood .content-wrapper .blauw {
+	a:not(.btn) {
+	  color: $blue;
+	  transition: 0.15s ease-in;
+	  position: relative;	  
+    &:after {
+	    position: absolute;
+	    bottom: -4px;
+	    left: 0;
+	    content: '';
+	    height: 2px;
+	    background: $red;
+	    width: 0%;
+	    transition: 0.2s ease-in-out;
+    }
+	  &:hover {
+	    color: $blue;
+	    text-decoration: none;
+	    &:after {
+		    width: 100%;
+	    }
+	  }
+	  &:active, &:focus, &:target {
+	    color: $blue;
+	  }
+	}
+}
+
+.overlay {
+  position: relative;
+  float: left;
+  cursor: pointer;
+}
+
+.overlay:before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -moz-transition: background .3s linear;
+  -webkit-transition: background .3s linear;
+  -o-transition: background .3s linear;
+  transition: background .3s linear;
+}
+
+.overlay:hover:before {
+  background: none;
+}
+
+.rood .overlay:before {
+  background: rgba($red, 0.5);
+}
+.blauw .overlay:before {
+  background: rgba($blue, 0.5);	
+}
+
+p {
+	margin-bottom: 25px;
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+ol {
+	padding-left: 30px;
+}
+
+.content-wrapper {
+  ul {
+	  margin-bottom: 30px;
+	  li {
+		  position: relative;
+		  padding-left: 15px;
+		  &:after {
+			  content: '';
+			  position: absolute;
+			  left: 0;
+			  top: 12px;
+			  width: 3px;
+			  height: 3px;
+			  border-radius: 10px;
+		  }
+	  }
+	}
+}
+.blauw .content-wrapper ul li:after {
+	background: $blue;
+}
+.rood .content-wrapper ul li:after {
+	background: $red;
+}
+.blauw .content-wrapper .block-info ul li:after,
+.blauw .content-wrapper .mod-foto ul li:after,
+.blauw .content-wrapper .bg-darkblue ul li:after,
+.rood .content-wrapper .block-info ul li:after,
+.rood .content-wrapper .mod-foto ul li:after,
+.rood .content-wrapper .bg-darkblue ul li:after {
+	background: #fff;
+}
+.container, .container-fluid {
+  padding: 0 25px;
+}
+
+@include media-breakpoint-up(md) {
+  body {
+    font-size: 15px;
+    line-height: 23px;
+  }
+  h1, .h1 {
+    font-size: 70px;
+    line-height: 60px;
+    margin-bottom: 30px;
+  }
+  h2, .h2 {
+    font-size: 40px;
+    line-height: 37px;
+    margin-bottom: 30px;
+  }
+  h3, .h3 {
+    font-size: 30px;
+    line-height: 28px;  
+  }
+  h4, .h4 {
+    font-size: 24px;
+    line-height: 24px;  
+  }
+  h5, .h5 {
+    font-size: 19px;
+    line-height: 23px;  
+    margin-bottom: 20px;
+  }
+  h6, .h6 {
+    font-size: 15px;
+    line-height: 17px;  
+    margin-bottom: 20px;
+  }
+  .lead {
+		font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  body {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  h1, .h1 {
+    font-size: 80px;
+    line-height: 66px;
+    margin-bottom: 30px;
+  }
+  h2, .h2 {
+    font-size: 50px;
+    line-height: 47px;
+    margin-bottom: 30px;
+  }
+  h3, .h3 {
+	    font-size: 37px;
+	    line-height: 34px;  
+  }
+  h4, .h4 {
+    font-size: 27px;
+    line-height: 27px;  
+  }
+  h5, .h5 {
+    font-size: 22px;
+    line-height: 24px;  
+    margin-bottom: 20px;
+  }
+  h6, .h6 {
+    font-size: 18px;
+    line-height: 18px;  
+    margin-bottom: 20px;
+  }
+  .lead {
+		font-size: 21px;
+    line-height: 28px;
+    margin-bottom: 30px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+
+}

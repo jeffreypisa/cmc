@@ -1,0 +1,42 @@
+{% set sectionno = '0' %}
+
+{% for item in post.get_field('blokken') %}
+
+  {% set sectionno = sectionno + '1' %}
+  
+  {% if item.acf_fc_layout == 'pageheader' %}
+		{% include 'pagebuilder/pageheader.twig' %}
+			
+  {% elseif item.acf_fc_layout == 'content' %}
+		{% include 'pagebuilder/content.twig' %}
+
+  {% elseif item.acf_fc_layout == 'cards' %}
+		{% include 'pagebuilder/cards.twig' %}
+
+  {% elseif item.acf_fc_layout == 'lead' %}
+		{% include 'pagebuilder/lead.twig' %}
+		
+  {% elseif item.acf_fc_layout == 'youtube' %}
+		{% include 'pagebuilder/youtube.twig' %}
+		
+  {% elseif item.acf_fc_layout == 'blog' %}
+		{% include 'pagebuilder/nieuws.twig' %}
+
+	{% elseif item.acf_fc_layout == 'cta' %}
+		{% include 'pagebuilder/cta.twig' %}
+				
+	{% elseif item.acf_fc_layout == 'cta' %}
+		{% include 'pagebuilder/cta.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'foto' %}
+		{% include 'pagebuilder/foto.twig' %}
+		
+	{% elseif item.acf_fc_layout == 'luistercijfers' %}
+		{% include 'pagebuilder/luistercijfers.twig' %}
+		
+	{% elseif item.acf_fc_layout == 'calltoaction' %}
+		{% include 'pagebuilder/calltoaction.twig' %}
+		
+  {% endif %}
+  
+{% endfor %}

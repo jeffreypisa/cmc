@@ -1,0 +1,35 @@
+<section class="mod-cards bg-{{item.achtergrond}}">
+  <div class="container">
+		<div class="row">
+			{% set delay = 0 %}
+  		{% for item in item.fotokaartjes %}
+  			<div class="col-md-6 col-lg-4">
+  				{% if item.afbeelding %}
+  					<img src="{{ item.afbeelding }}" data-aos="fade-in" data-aos-duration="800" data-aos-delay="{{ delay }}">
+  				{% endif %}
+  				<div class="card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{ delay }}">
+  					<div class="js-matchheight">
+	  					{% if item.titel %}
+	  						<h4> {{ item.titel }} </h4>
+	  					{% endif %}
+	  					{% if item.content %}
+	  						<p> {{ item.content }} </p>
+	  					{% endif %}
+  					</div>	
+  					<div class="js-matchheight2">			
+	  					{% if item.telefoon %}
+	  						<p class="tel"> Tel. {{ item.telefoon }} </p>
+	  					{% endif %}
+  					</div>
+  					{% if item.button %}
+							<a class="btn btn-outline-light" target="{{ item.button.target }}" href="{{ item.button.url }}">
+								{{ item.button.title }} 
+							</a>
+				    {% endif %}
+  				</div>
+  			</div>
+  			{% set delay = delay + '150' %}
+  		{% endfor %}
+		</div>
+  </div>    
+</section>

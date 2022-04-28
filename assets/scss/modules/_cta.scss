@@ -1,0 +1,305 @@
+.blauw .mod-cta {
+	.kolom1, .kolom2 {
+		&.bg-color:after {
+			background: $blue;
+		}
+		&.bg-gradient:after {
+			background-image: linear-gradient(225deg, #FF0000 0%, #007BFB 100%);
+		}
+	}
+	.afbeelding-container {
+		figure {
+			background: $blue;
+		}
+	}
+}
+.mod-cta {
+	margin-top: 0;
+	padding: 0;
+	.block {
+		position: relative;
+		padding-bottom: 66%;
+		&.square {
+			padding-bottom: 100%;
+		}
+		div {
+			position:absolute;
+			background-size: cover;
+			background-position: center center;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+	&.padding-0 {
+	}
+	&.noblokpadding {
+		.kolom1, .kolom2 {
+			.blok-body {
+				padding-top: 0;
+				padding-bottom: 0;
+			}
+		}
+	}
+	h2, h3 {
+		font-weight: 300;
+	}
+	div.ringen {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		height: 278px;
+		width: 278px;
+		margin-top: -139px;
+		margin-left: -139px;
+		img.ringen {
+			width: 100%;
+			height: 100%;
+		}
+		img.driehoek {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 40px;
+			margin-left: -20px;
+			margin-top: -18px;
+		}
+	}
+	.kolom1, .kolom2 {
+		background: transparent !important;
+		&:after {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: -600px;
+			right: -600px;
+			z-index: -2;
+			content: '';
+		}
+		&.bg-white:after {
+			background: $white;
+		}
+		&.bg-color:after {
+			background: $red;
+		}
+		&.bg-darkblue:after {
+			background: $darkblue;
+		}
+		&.bg-gradient:after {
+			background-image: linear-gradient(45deg, #FF0000 0%, #007BFB 100%);
+		}
+		&.text-white {
+			color: #fff;
+			h1,h2,h3 {
+				color: #fff;
+			}
+		}
+		.blok-body {
+			padding: 60px 0;
+			img {
+		    max-width: 60%;
+		    margin: 0 auto;
+		    display: block;
+			}
+		}
+	}
+	.afbeelding-container {
+		width: 100%;
+		position: relative;
+		padding-top: 90%;
+		margin-bottom: 100px;
+		figure {
+			position: absolute;
+			height: auto;
+			width: 100%;
+			margin: 0;
+			background: $red;
+			&.doorzichtig {
+				opacity: 0.68;
+			}
+			&:nth-child(1) {
+				top: 0;
+				left: 10%;
+				right: 0%;
+				width: 90%;
+			}
+			&:nth-child(2) {
+				bottom: 0%;
+				left: 0;
+				width: 80%;	
+				padding-bottom: 50%;	
+				box-shadow: 0 6px 26px 0 rgba(0,0,0,0.70);
+			}
+			&:nth-child(3) {
+				right: 9%;
+		    left: auto;
+		    top: 9%;
+		    width: 45%;
+		    padding-bottom: 45%;
+			  box-shadow: 0 10px 40px 0 rgba(0,0,0,0.50);
+			}
+		}
+	}
+	
+	.kolom1 {
+		.afbeelding-container {
+			figure {
+				&:nth-child(1) {
+					left: 0;
+					right: 10%;
+				}
+				&:nth-child(2) {
+					left: auto;
+					right: 0;
+				}
+				&:nth-child(3) {
+					left: 9%;
+					right: auto;
+				}
+			}
+		}
+	}
+	.card-body {
+		padding: 40px 0;
+		> * {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		h2 {
+			margin-bottom: 20px;
+		}
+		img {
+			height: auto;
+			max-width: 100%;
+		}
+	}
+	.bg-cover {
+		background-size: cover;
+		background-position: center center;
+		min-height: 300px;
+	}
+}
+
+
+@include media-breakpoint-up(md) {
+	.mod-cta {
+		padding: 0;
+		div.ringen {
+			height: 278px;
+			width: 278px;
+			top: 50%;
+			right: 0;
+			bottom: auto;
+			left: auto;
+			margin-top: -139px;
+			margin-left: 0;
+			margin-right: -139px;
+			img.driehoek {
+				width: 50px;
+				margin-left: -25px;
+				margin-top: -22px;
+			}
+		}
+		.bg {
+			background-size: cover;
+			background-position: center center;
+			position: absolute;
+			top: 0;
+			width: 50%;
+			bottom: 0;
+			z-index: -1;
+			&.k1 {
+				left: 0;
+			}
+			&.k2 {
+				right: 0;
+			}
+		}
+		.kolom1, .kolom2 {
+			min-height: 440px;
+			&:after {
+				display: none;
+			}
+			.blok-body {
+				padding: 80px 0;
+				img {
+					max-width: 80%;
+				}
+			}
+		}
+		.kolombg {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 50%;
+			z-index: -1;
+			&.k1 {
+				left: 0;
+			}
+			&.k2 {
+				right: 0;
+			}
+		}
+		.afbeelding-container {
+			margin-bottom: 40px;
+			figure:nth-child(1) {
+				top: 0;
+				left: 10%;
+				right: 0%;
+				width: 90%;
+			}
+			figure:nth-child(2) {
+				bottom: 0%;
+				left: 0;		
+				box-shadow: 0 6px 26px 0 rgba(0,0,0,0.70);
+			}
+			figure:nth-child(3) {
+				right: 9%;
+		    left: auto;
+		    top: 9%;
+			  box-shadow: 0 10px 40px 0 rgba(0,0,0,0.50);
+			}
+		}
+		.card-body {
+			padding: 80px 30px;
+		}
+		.bg-cover {
+			min-height: 400px;
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.mod-cta {
+		.kolom1, .kolom2 {
+			min-height: 580px;
+		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.mod-cta {
+		div.ringen {
+			height: 350px;
+			width: 350px;
+			top: 50%;
+			right: 0;
+			bottom: auto;
+			left: auto;
+			margin-top: -175px;
+			margin-left: 0;
+			margin-right: -175px;
+		}
+		.kolom1, .kolom2 {
+			min-height: 680px;
+			.blok-body {
+				padding: 100px 0;
+			}
+		}
+		.bg-cover {
+			min-height: 400px;
+		}
+	}
+}

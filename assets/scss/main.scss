@@ -1,0 +1,67 @@
+/*!
+Theme Name: Pios
+Theme URI: https://www.pios.nl
+Author: Emonks
+Author URI: https://www.emonks.nl
+Description: Thema ontwikkeld door emonks.nl
+Version: 1.1
+Text Domain: myproject
+!*/
+
+@import 'common/variables';
+
+@import '../../bower_components/bootstrap/scss/bootstrap';
+@import '../../bower_components/fancybox/dist/jquery.fancybox.min.css';
+
+@import '../fonts/fonts';
+@import '../fonts/brands.css';
+@import '../fonts/solid.css';
+@import '../fonts/fontawesome.css';
+
+@import 'plugins/slick';
+
+@import 'gutenberg/base';
+@import 'gutenberg/info';
+@import 'gutenberg/table';
+@import 'gutenberg/accordion';
+@import 'gutenberg/download';
+@import 'gutenberg/lead';
+@import 'gutenberg/quote';
+
+@import 'common/base';
+@import 'common/blog';
+@import 'common/table';
+@import 'common/single';
+@import 'common/buttons'; 
+@import 'common/section';
+@import 'common/cards';
+@import 'common/tooltip';
+@import 'common/socialmedia';
+@import 'common/carousel';
+@import 'common/colors';
+@import 'common/modal';
+@import 'common/embed';
+@import 'common/form';
+@import 'common/progress';
+@import 'common/dropdownmenu';
+@import 'common/tease';
+
+@import 'modules/footer';
+@import 'modules/content';
+@import 'modules/header';
+@import 'modules/cards';
+@import 'modules/foto';
+@import 'modules/pageheader';
+@import 'modules/mobilemenu';
+@import 'modules/slider';
+@import 'modules/lead';
+@import 'modules/mailchimp';
+@import 'modules/gbcontent';
+@import 'modules/nieuws';
+@import 'modules/cta';
+@import 'modules/calltoaction';
+@import 'modules/luistercijfers';
+@import 'modules/youtube';
+@import 'modules/title';
+@import 'modules/logoslider';
+@import 'modules/breadcrumbs';

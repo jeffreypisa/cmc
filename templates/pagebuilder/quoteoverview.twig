@@ -1,0 +1,39 @@
+<section class="mod-quoteoverview bg-{{item.achtergrond}}">
+  <div class="container">
+		{% if item.titel %}
+			<div class="text-center">
+				<h2> {{ item.titel }} </h2>
+			</div>
+		{% endif %}
+		{% if quoteterms %}
+			<div class="mod-filterblocks">
+				<div class="text-center">
+					{% set delay = 0 %}
+					{% for item in quoteterms %}
+						<span data-aos="fade-in" data-aos-duration="800" data-aos-delay="{{delay}}">
+							<a href="{{item.link}}" class="btn btn-light">{{ item }}</a>
+						</span>
+						{% set delay = delay + '150' %}
+					{% endfor %}
+				</div>
+			</div>
+		{% endif %}
+  		<div class="row">
+  			{% set delay = 0 %}
+	  		{% for item in quotes %}
+	  			<div class="col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{delay}}">
+	  				{% include 'tease-quote.twig' %}
+	  			</div>
+	  			{% set delay = delay + '150' %}
+	  		{% endfor %}
+  		</div>
+  		{% if item.knop %}
+			<div data-aos="fade-in" data-aos-duration="800"  class="text-center">
+				<br>
+				<a class="btn btn-primary" href="{{ item.knop.url }}">
+					{{ item.knop.title }} 
+				</a>
+			</div>
+    {% endif %}
+  </div>    
+</section>

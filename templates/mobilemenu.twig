@@ -1,0 +1,30 @@
+<div class="mod-mobilemenu d-flex align-items-center">
+	<div class="logo">
+		<div class="container-fluid">
+	    <a class="logo-link" href="{{site.url}}" rel="home">
+		    <div class="row">
+		    	<div class="col-md d-flex align-items-center">
+				  	<img src="{{ options.logo }}" alt="logo" width="25" height="25"> 
+				  	<span class="logopart"> {{ options.logo_part }}</span>
+				  </div>
+		    </div>
+		  </a>
+	  </div>
+  </div>
+  <div class="container-fluid text-center" style="margin: auto;">
+    <a id="mobilemenubtn" class="btn-menu js-menu d-block d-lg-none float-left">
+      <div class="lines">
+    	  <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </a>
+    <div class="menucontent">
+      {% include "menu.twig" with {'menu': menu.get_items} %}
+      <div class="sub">
+      	{% include "footermenu.twig" with {'footermenu': footermenu.get_items} %}
+      </div>
+      {% include 'partials/socialmedia.twig' %}
+    </div>
+  </div>
+</div>

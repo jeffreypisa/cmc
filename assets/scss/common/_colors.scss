@@ -1,0 +1,64 @@
+.bg-white {
+	background-color: transparent !important;
+}
+
+.bg-grey {
+  background-color: #D5D4D1;
+}
+.bg-darkgrey {
+	background-color: #7C8A93;
+}
+.bg-lightgrey {
+  background-color: $lightgrey;
+  .btn-light:not(:disabled):not(.disabled) {
+	  background-color:#fff;
+	  border-color: #fff;
+	  &:hover {
+		  background-color: $grey;
+			border-color: $grey;
+	  }
+  }
+}
+
+.rood, .blauw .rood {
+	.bg-gradient {
+		background-image: linear-gradient(225deg, #FF0000 0%, #007BFB 100%);
+	}
+	.bg-color {
+		background-color: $red;
+	}
+}
+.blauw, .rood .blauw {
+	.bg-gradient {
+		background-image: linear-gradient(45deg, #FF0000 0%, #007BFB 100%);
+	}
+	.bg-color {
+		background-color: $blue;
+	}
+}
+.bg-lightblue {
+	background-color: $lightblue;
+  &[href]:hover, &[data-target]:hover {
+	  background-color: lighten($lightblue, 20%);
+  }
+}
+.bg-darkblue {
+	position: relative;
+	background-color: $darkblue;
+}
+.bg-blue {
+	background-color: $blue;
+}
+.bg-red {
+	background-color: $red;
+}
+
+.bg-darkblue, .bg-blue, .bg-lightblue, .bg-purple, .bg-softblue, .bg-color, .text-white {
+  color: #fff;
+  p {
+    color: #fff;
+  }
+  h1,h2,h3,h4,h5 {
+  	color: #fff;
+  }
+}

@@ -1,0 +1,76 @@
+<section class="mod-accordion bg-{{ item.achtergrond }}">
+  <div class="container">
+  	<div class="row">
+  		<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+		  	{% if item.titel %}
+	      <h2 class="h1 text-center">{{ item.titel }}</h2>
+	    {% endif %}
+	    {% if item.content %}
+		    	<div class="lead text-center">
+		      	{{ item.content }}
+		    	</div>
+	    {% endif %}
+	    <br>
+	  </div>
+	</div>
+	<div class="row">
+  		<div class="col-md-10 offset-md-1">
+			<div class="accordion" id="accordion">
+				{% if item.card %}
+					{% set cardno = 1 %}
+					{% set delay = 0 %}
+					{% for card in item.card %}
+					  <div class="item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{delay}}" data-aos-easing="ease-in-sine">
+				      <a id="heading{{ cardno }}" class="heading bg-lightblue" data-toggle="collapse" data-target="#collapse{{ cardno }}" aria-controls="collapse{{ cardno }}">
+				      	<div class="row">
+					      	<div class="col">
+					        	<h5>{{ card.vraag }}</h5>
+					      	</div>
+					      	<div class="col-auto">
+					      		<i class="fal fa-chevron-down"></i>
+					      	</div>
+				      	</div>
+				      </a>
+					    <div id="collapse{{ cardno }}" class="collapse" aria-labelledby="heading{{ cardno }}" data-parent="#accordion">
+					    	<div class="antwoord">
+					    		{{ card.antwoord }}
+					    		{% for tabel in card.tabel %}
+					    			<h5> {{ tabel.titel }} </h5>
+				    				<table style="width: 100%">
+				    					<tbody>
+							    			{% for rij in tabel.rij %}
+							    				<tr>
+								    				<td class="d-none d-md-table-cell">
+								    					{{ rij.kolom_1 }}
+								    				</td>
+								    				<td class="d-none d-md-table-cell text-left" style="width: 20px; ">
+								    					{{ rij.valuta }} 
+								    				</td>
+								    				<td class="d-none d-md-table-cell text-right" style="width: 70px; padding-right: 4px;">
+								    					{{ rij.kolom_2 }} 
+								    				</td>
+								    				<td class="d-none d-md-table-cell text-left" style="width: 140px;">
+								    					{{ rij.kolom_3 }} 
+								    				</td>
+								    				<td class="d-md-none">
+								    					{{ rij.kolom_1 }}<br>
+								    					{{ rij.valuta }} {{ rij.kolom_2 }} {{ rij.kolom_3 }}
+								    				</td>
+							    				</tr>
+							    			{% endfor %}
+				    					</tbody>
+				    				</table>
+					    			<br>
+					    		{% endfor %}
+					    	</div>
+					    </div>
+					  </div>
+					  {% set cardno = cardno + 1 %}
+					  {% set delay = delay + 200 %}
+					{% endfor %}
+				{% endif %}
+			</div>
+	  </div>
+	  <div class="clearfix"></div>
+	</div>
+</section>

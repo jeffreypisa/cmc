@@ -1,0 +1,56 @@
+<section class="mod-luistercijfers bg-{{ item.achtergrond }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        {% if item.titel %}
+          <h2>{{ item.titel }}</h2>
+        {% endif %}
+
+      	{{ item.tekst }}
+	
+				{% if item.button %}
+					<a class="btn btn-primary" target="{{ item.button.target }}" href="{{ item.button.url }}">
+						{{ item.button.title }} 
+					</a>
+					<br>
+					<br><br>
+		    {% endif %}
+			</div>
+			<div class="col-md-6">
+				<h4> {{ item.titel_luistercijfers }} </h4>
+				
+				{% for rij in item.rij %}
+					<div class="row">
+						{% for kolom in rij.kolom %}
+							<div class="col">
+								<h5 class="altfont"> {{ kolom.titel }} </h5>
+								{{ kolom.tekst }}
+							</div>
+						{% endfor %}
+					</div>
+				{% endfor %}
+				
+				<h4> {{ item.titel_leeftijd }} </h4>
+				
+				{% for blok in item.blok %}
+					<div class="blok">
+						<h5 class="altfont"> {{ blok.titel }} </h5>
+						<div class="row">
+							{% for rij in blok.rij %}
+								<div class="col-4">
+									{{ rij.leeftijd }}
+								</div>
+								<div class="col-8">
+									<div class="progress">
+									  <div class="progress-bar bg-{{ rij.kleur }}" role="progressbar" aria-valuenow="{{ rij.percentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ rij.percentage }}%"><span>{{ rij.percentage }}%</span></div>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				{% endfor %}
+			
+			</div>
+		</div>
+  </div>
+</section>

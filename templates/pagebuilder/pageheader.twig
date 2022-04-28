@@ -1,0 +1,155 @@
+<section class="mod-slider mod-pageheader bg-{{ item.achtergrond }} {% if item.toon_ringen %} has-rings{% endif %} {% if item.text_white %} text-white {% endif %}">
+	{% if options.whatsapp and item.toon_whatsapp %}
+		<a href="https://wa.me/{{ options.whatsapp}}" class="whatsapp">
+			<i class="fab fa-whatsapp" data-aos="fade-left" data-aos-duration="200" data-aos-delay="300"></i>
+		</a>
+	{% endif %}
+  <div class="slide active">
+		<div class="bg {% if item.overlay %} overlay {% endif %}" style="background-image: url({{ item.afbeelding }});">
+		</div>
+		{% if item.toon_ringen %}
+			<img class="ringen" src="{{ theme.link }}/assets/images/ringen_{{ options.kleurstelling }}.svg" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="0"></img>
+		{% endif %}
+		<div class="sterren {% if item.text_white %} {% else %} faded {% endif %}">
+			<div class="row no-gutters">
+				<div class="col-8 col-md-5">
+					{% set delay = 0 %}
+					{% set starsize = 100 %}
+					{% set starsize = 90 %}
+					<div class="row no-gutters">
+					{% for i in 0..200 %}
+						{% if loop.index0 == 10 %}
+							{% set starsize = 100 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+						{% if loop.index0 == 20 %}
+							{% set starsize = 95 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+						{% if loop.index0 == 30 %}
+							{% set starsize = 90 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+						{% if loop.index0 == 40 %}
+							{% set starsize = 85 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+						{% if loop.index0 == 50 %}
+							{% set starsize = 80 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+						{% if loop.index0 == 60 %}
+							{% set starsize = 75 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+						{% if loop.index0 == 70 %}
+							{% set starsize = 70 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+						{% if loop.index0 == 80 %}
+							{% set starsize = 65 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+						{% if loop.index0 == 90 %}
+							{% set starsize = 60 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+						{% if loop.index0 == 100 %}
+							{% set starsize = 55 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+						{% if loop.index0 == 110 %}
+							{% set starsize = 50 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+						{% if loop.index0 == 120 %}
+							{% set starsize = 45 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+						{% if loop.index0 == 130 %}
+							{% set starsize = 40 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+						{% if loop.index0 == 140 %}
+							{% set starsize = 35 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+						{% if loop.index0 == 150 %}
+							{% set starsize = 30 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+						{% if loop.index0 == 160 %}
+							{% set starsize = 25 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+						{% if loop.index0 == 170 %}
+						{% set starsize = 20 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+						{% if loop.index0 == 180 %}
+							{% set starsize = 15 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+						{% if loop.index0 == 190 %}
+							{% set starsize = 10 %}
+							</div>
+							<div class="row no-gutters">
+						{% endif %}
+							<div class="col ">
+								<div class="ster w-100 h-100 d-flex align-items-center flex-wrap">
+									<img src="{{ theme.link }}/assets/images/star_{{ options.kleurstelling }}.svg" alt="star" style="transition-delay: {{ delay }}s; width: {{ starsize|round }}%"/>
+								</div>
+							</div>
+						{% set starsize = starsize / 1.2 %}
+						{% set delay = delay + 0.0018 %}
+					{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+
+  	<div class="content w-100 h-100 d-flex align-items-center">
+	  	<div class="container">
+	    	<div class="row">
+	    		<div class="col-md-8 col-lg-5">
+	    			<br>
+			    	<h2 class="{% if item.h2 %} h2 {% else %} h1 {% endif %}" data-aos="fade-right" data-aos-duration="800" data-aos-delay="600"> {{ item.titel }} </h2>
+			    	{% if item.content %}
+			    		<div data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+			    			{{ item.content }}
+			    		</div>
+			    	{% endif %}
+			      {% if item.button %}
+							<a class="btn btn-primary" href="{{ item.button.url }}">
+								{{ item.button.title }} 
+							</a>
+							{% if item.button2 %}
+								<a class="btn btn-light" href="{{ item.button2.url }}">
+									{{ item.button2.title }} 
+								</a>
+							{% endif %}
+				    {% endif %}
+	    		</div>
+	    	</div>
+			</div>
+		</div>
+  </div>
+</section>

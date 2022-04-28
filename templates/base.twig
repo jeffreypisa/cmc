@@ -1,0 +1,62 @@
+{% block html_head_container %}
+  {% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+  <body class="{{body_class}} {{ options.kleurstelling }} {% if post.header_transparent %} header-transparent {% endif %}" data-template="base.twig">
+    {% include 'mobilemenu.twig' %}
+		<header class="header w-100 d-flex align-items-center {% if post.tekst_zwart %} text-black {% endif %}">
+			{% block header %}
+				<div class="container-fluid">
+				  <div class="row">
+				  	<div class="col d-flex align-items-center">
+							<div class="logo" role="banner">
+								<a class="logo-link" href="{{site.url}}" rel="home">
+									<div class="row">
+										<div class="col-md d-flex align-items-center">
+									  	<img src="{{ options.logo }}" alt="logo" width="25" height="25"> 
+									  	<span class="logopart"> {{ options.logo_part }}</span>
+									  </div>
+									</div>
+								</a>
+							</div>
+				    </div>
+				    <div class="col-auto d-flex align-items-center d-lg-none">
+				    	<a id="mobilemenubtn" class="btn-menu js-menu d-xl-none">
+						    <div class="lines">
+						  		<span></span>
+					        <span></span>
+					        <span></span>
+						    </div>
+					    </a>
+				    </div>
+				    <div id="nav-main" class="col-auto d-none d-lg-flex align-items-center">
+							{% include "menu.twig" with {'menu': menu.get_items} %}
+				    </div>
+				  </div>
+				</div>
+  		{% endblock %}
+			<div class="clearfix"></div>
+		</header>
+		<div id="content" role="main" class="content-wrapper {% if post.account %} mod-account d-flex align-items-center {% endif %}">
+			{% block content %}
+				Sorry, no content
+			{% endblock %}
+		</div>
+		{% block footer %}
+      {% include 'footer.twig' %}
+    {% endblock %}
+    <script src="{{theme.link}}/bower_components/aos/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        easing: 'ease-in-out-back',
+        offset: 0,
+        duration: 800,
+        delay: 0
+      });
+    </script>
+	</body>
+  {{ function('wp_footer') }}
+</html>

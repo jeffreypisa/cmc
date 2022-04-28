@@ -1,0 +1,156 @@
+.btn, .field-wrap input[type=button] {
+  height: 44px;
+  line-height: 44px;
+  border-radius: 100px;
+  font-family: "Open Sans";
+  padding: 0 35px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: 0.15s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  background-repeat: no-repeat;
+  background-position: center 50px;
+  background-size: 20px;
+  border-width: 2px;
+  letter-spacing: 1px;
+	&:hover {
+    background: #fff;
+    color: transparent;
+    background-image: url(../images/driehoek.svg);
+    background-position: center center;
+	  background-repeat: no-repeat;
+	  background-size: 20px;
+	}
+  &:focus, &:active, &:target, &:not(:disabled):not(.disabled):active {
+		color: $blue;
+    opacity: 1;
+
+  }
+}
+
+.btn-link {
+	display: inline-block;
+	color: $blue;
+	font-size: 10px;
+	line-height: 22px;
+	border-bottom: 1px solid $red;
+	font-weight: bold;
+	text-transform: uppercase;
+	&:hover {
+		border-color: $blue;
+		color: $blue;
+		text-decoration: none;
+	}
+}
+
+.rood .btn-link {
+	color: $red;
+	border-bottom-color: $red;
+	&:hover {
+		border-color: $red;
+		color: $red;
+	}
+}
+
+
+.blauw .btn-light:not(:disabled):not(.disabled) {
+  color: $blue;
+  background-color: #fff;
+  &:hover {
+    background-color: $blue;
+    opacity: 1;
+    border-color: #fff;
+    color: transparent;
+  }
+  &.active, &.active:hover {
+	  background-color: $blue;
+	  border-color: #fff;
+	  color: transparent;
+  }
+}
+
+.rood .btn-light:not(:disabled):not(.disabled) {
+  color: $red;
+  background-color: #fff;
+  &:hover {
+    background-color: $red;
+    opacity: 1;
+    border-color: #fff;
+    color: transparent;
+  }
+  &.active, &.active:hover {
+	  background: $red;
+	  border-color: #fff;
+	  color: transparent;
+  }
+}
+
+.blauw .btn-primary, .rood .blauw .btn-primary, .blauw .field-wrap input[type=button] {
+  border: 0;
+  background-color: $blue;
+  border-color: $blue;
+  color: #fff;
+  &:hover {
+	  color: transparent;
+    background-color: lighten($blue, 10%);
+    border-color: lighten($blue, 10%);
+  }
+  &:focus, &:active, &:target, &:not(:disabled):not(.disabled):active {
+    color: transparent;
+    background-color: $blue;
+    border-color: $blue;
+  } 
+}
+
+.rood .btn-primary, .blauw .rood .btn-primary, .rood .field-wrap input[type=button] {
+	border: 0;
+	background-color: $red;
+  border-color: $red;
+  color: #fff;
+	&:hover {
+		color: transparent;
+    background-color: lighten($red, 10%);
+    border-color: lighten($red, 10%);
+	}
+	&:focus, &:active, &:target, &:not(:disabled):not(.disabled):active {
+		color: transparent;
+    background-color: $red;
+    border-color: $red;
+  }
+}
+
+.btn-outline-light, .footer .field-wrap input[type=button] {
+  border: 0;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  line-height: 40px;
+  &:hover {
+	  background-color: transparent;
+	  color: transparent;
+	  border-color: #fff;
+  }
+  &:focus, &:active, &:target, &:not(:disabled):not(.disabled):active {
+
+  } 
+  &:before {
+		color: #fff;	
+	}
+}
+
+
+
+@include media-breakpoint-up(md) {
+	.btn, .field-wrap input[type=button] {
+		font-size: 13px;
+		line-height: 42px;
+	}
+	.btn-link {
+		line-height: 22px;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+}

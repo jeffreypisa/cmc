@@ -1,0 +1,34 @@
+section.bg-white + section.bg-white,
+section.bg-color + section.bg-color,
+section.bg-fade + section.bg-white,
+section.bg-blue + section.bg-blue,
+.bg-color + .bg-blue .blok-color,
+section.bg-yellow + section.bg-yellow,
+section.bg-purple + section.bg-purple,
+section.bg-light + section.bg-light,
+section.bg-darkblue + section.bg-darkblue,
+section.bg-lichtbeige + section.bg-lichtbeige {
+	padding-top: 20px !important;
+	margin-top: -20px !important;
+}
+
+section {
+  padding: 50px 0;
+  position: relative;
+  overflow: hidden;
+	background-size: cover;
+	background-position: center center;    
+	z-index: 1;
+}
+
+@include media-breakpoint-up(md) {
+  section {
+    padding: 70px 0;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  section {
+    padding: 100px 0;
+  }
+}

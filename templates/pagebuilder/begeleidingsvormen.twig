@@ -1,0 +1,26 @@
+<section class="mod-begeleidingsvormen bg-{{item.achtergrond}}">
+  <div class="container">
+		{% if item.titel %}
+			<div class="text-center">
+				<h2> {{ item.titel }} </h2>
+			</div>
+		{% endif %}
+  		<div class="row">
+  			{% set delay = 0 %}
+	  		{% for item in item.begeleidingsvormen %}
+	  			<div class="col-md-4">
+	  				{% include 'tease-begeleidingsvorm.twig' %}
+	  			</div>
+	  			{% set delay = delay + '150' %}
+	  		{% endfor %}
+  		</div>
+  		{% if item.button %}
+			<div class="text-center">
+				<br>
+				<a class="btn btn-primary" href="{{ item.button.link }}">
+					{{ item.button.title }} 
+				</a>
+			</div>
+    {% endif %}
+  </div>    
+</section>

@@ -1,0 +1,30 @@
+<div id="footer" class="section footer d-flex align-items-center">
+  <div class="container"> 
+		<div class="row">
+  		<div class="col-md-4 col-lg-3" data-aos="fade-in" data-aos-duration="800" data-aos-delay="0">
+  			<h6 class="head"> Contact </h6>
+  			{{ options.footer_contact }}
+  			{% include 'partials/socialmedia.twig' %}
+  		</div>
+  		<div class="col-md-4 col-lg-6">
+  			<div class="row">
+  				<div class="col-lg-6 rood" data-aos="fade-in" data-aos-duration="800" data-aos-delay="150">
+		  			<h6 class="head"> CMC Media </h6>
+		  			{% include "footermenu.twig" with {'footermenu': footermenu_media.get_items} %}
+  				</div>
+  				<div class="col-lg-6 blauw" data-aos="fade-in" data-aos-duration="800" data-aos-delay="100">
+		  			<h6 class="head"> CMC Marketing </h6>
+		  			{% include "footermenu.twig" with {'footermenu': footermenu_marketing.get_items} %}
+  				</div>
+  			</div>
+  		</div>
+  		<div class="col-md-4 col-lg-3" data-aos="fade-in" data-aos-duration="800" data-aos-delay="200">
+  			<h6 class="head"> CMC Updates </h6>
+  			{{ options.footer_form }}
+  		</div>
+		</div>
+		<div class="subfooter">
+			<span> Copyright {{ "now"|date("Y") }} – CMC Marketing / Media  </span> <img src="{{theme.link}}/assets/images/star.svg" alt="star" width="12" />  <span> <a href="http://www.stoerebinken.nl"> Site by Stoere Binken Design </a> </span>
+		</div>
+  </div>
+</div>

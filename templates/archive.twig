@@ -1,0 +1,35 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% include 'pagebuilder.twig' %}
+  <section class="bg-white">
+		<div class="container">
+			<h1 class="h2"> CMC Updates </h1>
+			<br>
+			<!--
+      {% if categories %}
+				<div class="mod-filterblocks">
+					<div class="text-center">
+						<a href="{{ posttype_link }}" class="btn btn-light {% if current_category == '' %} active {% endif %}">alle</a>
+						{% for item in categories %}
+							<a href="{{ item.link }}" class="btn btn-light {% if item.id == current_category %} active {% endif %}">{{ item.title|lower }}</a>
+						{% endfor %}
+					</div>
+				</div>
+			{% endif %}
+			-->
+      <div class="clearfix"></div>
+      <div class="cards cards-archive">
+				<div class="row">
+					{% set delay = '0' %}
+					{% for item in posts %}  
+						<div class="col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{delay}}">
+							{% include 'tease.twig' %}
+						</div>
+						{% set delay = delay + '100' %}
+					{% endfor %}
+				</div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

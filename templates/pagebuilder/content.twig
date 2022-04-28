@@ -1,0 +1,37 @@
+<section class="mod-content bg-{{ item.achtergrond }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        {% if item.titel %}
+          <h2 class="text-center h3">{{ item.titel }}</h2>
+        {% endif %}
+      </div>
+    </div>
+  	{% if item.tekst_2 %}
+    	<div class="row">
+  			<div class="col-lg-6">
+        	{{ item.tekst }}
+  			</div>
+  			<div class="col-lg-6">
+        	{{ item.tekst_2 }}
+  			</div>
+    	</div>
+    {% else %}
+      <div class="row">
+  			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        	{{ item.tekst }}
+  			</div>
+    	</div>
+		{% endif %}
+		{% if item.button %}
+			<br>
+			<div class="row">
+    			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
+					<a class="btn btn-primary" target="{{ item.button.target }}" href="{{ item.button.url }}">
+						{{ item.button.title }} 
+					</a>
+    			</div>
+			</div>
+    {% endif %}
+  </div>
+</section>

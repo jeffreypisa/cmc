@@ -1,0 +1,53 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<div class="article-body">
+				<section class="blog bg-white">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-10 offset-md-1">
+								<h1 class="h2"> {{ post.title }} </h1>
+							  {{ post.content }}
+							</div>
+						</div>
+					</div>
+					<div class="prevnext">
+						<div class="row no-gutters">
+							<div class="col">
+								{% if post.prev %}
+									<a href="{{post.prev.link}}" class="prev d-flex align-items-center"> 
+										<div class="row no-gutters">
+											<div class="col-auto d-flex align-items-center">
+												<i class="fas fa-chevron-left"></i>
+											</div>
+											<div class="col">
+						      			<h5 class="altfont"> {{ post.prev.title }} </h5>
+											</div>
+										</div>
+						      </a>
+								{% endif %}
+							</div>
+							<div class="col">
+								{% if post.next %}
+									<a href="{{post.next.link}}" class="next d-flex align-items-center text-right"> 
+										<div class="row no-gutters w-100">
+											<div class="col">
+												<h5 class="altfont">{{ post.next.title }} </h5> 
+											</div>
+											<div class="col-auto d-flex align-items-center">
+												<i class="fas fa-chevron-right"></i>
+											</div>
+										</div>
+					      	</a>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+			  </section>
+			  {% include 'pagebuilder.twig' %}
+			</div>
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}

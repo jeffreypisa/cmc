@@ -1,0 +1,20 @@
+<section class="mod-iconen bg-{{item.achtergrond}}">
+  <div class="container">
+    <div class="row">
+    	{% set delay = 0 %}
+      {% for icon in item.usp %}
+				<div class="col-lg-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{delay}}" data-aos-easing="ease-in-sine">
+					<div class="row">
+						<div class="col-auto" style="margin-right: -15px;">
+							<img src="{{ icon.icon }}" width="50" height="50">
+						</div>
+						<div class="col d-flex align-items-center">
+							{{ icon.tekst }}
+						</div>
+					</div>
+				</div>
+				{% set delay = delay + '150' %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

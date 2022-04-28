@@ -1,0 +1,26 @@
+{% if talen|length > 0 %}
+  <section id="slider{{ sectionno }}" class="mod-slider carousel slide carousel-fade {% if item.text_white %} text-white {% endif %}" data-ride="carousel" data-interval="6000" data-aos="fade-in" data-aos-duration="800">
+    <div class="carousel-inner">
+      {% set slidenr = 0 %}
+      {% for slide in talen %}
+        <div class="carousel-item slide
+          {% if slidenr == 0 %} active {% endif %}" style="background-image: url({{ slide.thumbnail }})">
+          <div class="content w-100 h-100 d-flex align-items-end">
+            <div class="container">
+            	<div class="row">
+            		<div class="col-md-8 col-lg-4">
+		              <h2 class="h1"> {{ slide.detitel }} </h2>
+		              {% if slide.link_shop %}
+		                <a class="btn btn-primary" href="{{ slide.link_shop }}"> Bestel nu </a>
+		              {% endif %}
+            		</div>
+            	</div>
+        		</div>
+          </div>
+        </div>
+        {% set slidenr = slidenr + 1 %}
+      {% endfor %}
+    </div>
+  </section>
+  {% set sectionno = sectionno + 1 %}
+{% endif %}

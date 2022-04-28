@@ -1,0 +1,126 @@
+<section class="mod-cta {% if item.k1_achtergrond == 'white' and item.k2_achtergrond == 'white' %} bg-white {% endif %} {% if item.minder_padding %} noblokpadding {% endif %} {% if item.alternatieve_kleur %} {% if options.kleurstelling == 'blauw' %} rood {% else %} blauw {% endif %}{% endif %}" >
+	<div class="kolombg k1 bg-{{ item.k1_achtergrond }}"></div>
+	<div class="kolombg k2 bg-{{ item.k2_achtergrond }}"></div>
+	{% if item.k1_layout == 'afbeeldingxl' %}
+		<div class="bg k1 d-none d-md-block" style="background-image: url({{ item.k1_afbeelding_enkel|resize(1024) }})" data-aos="fade-in" data-aos-duration="800" data-aos-delay="0"> </div>
+		<div class="block bg-{{ item.k1_achtergrond }} d-md-none">
+			<div style="background-image: url({{ item.k1_afbeelding_enkel|resize(1024) }})" class="w-100"></div>
+		</div>
+	{% endif %}
+	{% if item.k2_layout == 'afbeeldingxl' %}
+		<div class="bg k2 d-none d-md-block" style="background-image: url({{ item.k2_afbeelding_enkel|resize(1024) }})" data-aos="fade-in" data-aos-duration="800" data-aos-delay="0"> </div>
+		<div class="block bg-{{ item.k2_achtergrond }} d-md-none">
+	  	<div style="background-image: url({{ item.k2_afbeelding_enkel|resize(1024) }})" class="w-100"></div>
+	  </div>
+  {% endif %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 kolom1 bg-{{ item.k1_achtergrond }} {% if item.k1_achtergrond == 'color' or item.k1_achtergrond == 'gradient' or item.k2_achtergrond == 'darkblue' %} text-white {% endif %} {% if item.k1_layout == 'afbeelding' %} order-last order-md-first {% endif %}">
+				{% if item.toon_ringen %}
+					<div class="ringen">
+						<img class="ringen" src="{{ theme.link }}/assets/images/ringen_{% if item.alternatieve_kleur %}{% if options.kleurstelling == 'blauw' %}rood{% else %}blauw{% endif %}{% else %}{{ options.kleurstelling }}{% endif %}.svg" alt="ringen">
+						<img class="driehoek" src="{{ theme.link }}/assets/images/driehoek_{% if item.alternatieve_kleur %}{% if options.kleurstelling == 'blauw' %}rood{% else %}blauw{% endif %}{% else %}{{ options.kleurstelling }}{% endif %}.svg" alt="driehoek" />
+					</div>
+				{% endif %}
+	  		<div class="h-100 d-flex align-items-center">
+	  			{% if item.k1_layout == 'afbeelding' %}
+	  				<div class="afbeelding-container">
+		  				{% if item.k1_afbeelding %}
+								<figure class="{{ item.k1_1_style }} block square" data-aos="fade-in" data-aos-duration="800" data-aos-delay="0">
+									<div style="background-image: url({{ item.k1_afbeelding|resize(1024) }}")></div>
+								</figure>
+							{% endif %}
+							{% if item.k1_afbeelding_2 %}
+								<figure class="{{ item.k1_2_style }} block" data-aos="fade-right" data-aos-duration="800" data-aos-delay="150">
+									<div style="background-image: url({{ item.k1_afbeelding_2|resize(1024) }}")></div>
+								</figure>
+							{% endif %}
+							{% if item.k1_afbeelding_3 %}
+								<figure class="{{ item.k1_3_style }} block square" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+									<div style="background-image: url({{ item.k1_afbeelding_3|resize(1024) }}")></div>
+								</figure>
+							{% endif %}
+						</div>
+					{% elseif item.k1_layout == 'afbeeldingxl' %}
+					{% elseif item.k1_layout == 'afbeelding1' %}
+						{% if item.k1_afbeelding_enkel %}
+							<div class="blok-body w-100" data-aos="fade-right" data-aos-duration="800" data-aos-delay="0">
+								<div class="block square"> 
+									<div style="background-image: url({{ item.k1_afbeelding_enkel|resize(1024) }})"></div>
+								</div>
+							</div>
+						{% endif %}
+					{% else %}
+						<div class="blok-body" data-aos="fade-in" data-aos-duration="800" data-aos-delay="0">
+							<div class="row">
+								<div class="col-lg-10">
+							    {% if item.k1_titel %} 
+							    	<h2> {{ item.k1_titel }} </h2>
+							    {% endif %}
+									{% if item.k1_content %} 
+						    		{{ item.k1_content }}
+						    	{% endif %}
+							  	{% if item.k1_knop1 %} 
+										<a class="btn {% if item.k1_achtergrond == 'color' %} btn-outline-light {% else %} btn-primary {% endif %}" href="{{ item.k1_knop1.url }}"> 
+											{{ item.k1_knop1.title }} 
+										</a>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					{% endif %}
+				</div>
+	    </div>
+	    <div class="col-md-6 kolom2 bg-{{ item.k2_achtergrond }} {% if item.k2_achtergrond == 'color' or item.k2_achtergrond == 'gradient' or item.k2_achtergrond == 'darkblue' %} text-white {% endif %}">
+	  		<div class="h-100 d-flex align-items-center">
+	  			{% if item.k2_layout == 'afbeelding' %}
+	  				<div class="afbeelding-container">
+							{% if item.k2_afbeelding %}
+								<figure class="{{ item.k2_1_style }} block square" data-aos="fade-in" data-aos-duration="800" data-aos-delay="0">
+									<div style="background-image: url({{ item.k2_afbeelding|resize(1024) }}")></div>
+								</figure>
+							{% endif %}
+							{% if item.k2_afbeelding_2 %}
+								<figure class="{{ item.k2_2_style }} block" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">
+									<div style="background-image: url({{ item.k2_afbeelding_2|resize(1024) }}")></div>
+								</figure>
+							{% endif %}
+							{% if item.k2_afbeelding_3 %}
+								<figure class="{{ item.k2_3_style }} block square" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+									<div style="background-image: url({{ item.k2_afbeelding_3|resize(1024) }}")></div>
+								</figure>
+							{% endif %}
+						</div>
+					{% elseif item.k2_layout == 'afbeeldingxl' %}
+					{% elseif item.k2_layout == 'afbeelding1' %}
+						{% if item.k2_afbeelding_enkel %}
+							<div class="blok-body w-100" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">
+								<div class="block square"> 
+									<div style="background-image: url({{ item.k2_afbeelding_enkel|resize(1024) }})"></div>
+								</div>
+							</div>
+						{% endif %}
+					{% else %}
+						<div class="blok-body" data-aos="fade-in" data-aos-duration="800" data-aos-delay="150">
+							<div class="row">
+								<div class="offset-lg-2 col-lg-10">
+							    {% if item.k2_titel %} 
+							    	<h2> {{ item.k2_titel }} </h2>
+							    {% endif %}
+									{% if item.k2_content %} 
+						    		{{ item.k2_content }}
+						    	{% endif %}
+							  	{% if item.k2_knop1 %} 
+										<a class="btn {% if item.k1_achtergrond == 'color' %} btn-outline-light {% else %} btn-primary {% endif %}" href="{{ item.k2_knop1.url }}"> 
+											{{ item.k2_knop1.title }} 
+										</a>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					{% endif %}
+				</div>
+	    </div>
+	  </div>
+	</div>
+</section>

@@ -1,0 +1,49 @@
+.mod-calltoaction {
+  position: relative;
+
+  &:after, &:before {
+	  top: 0;
+	  position: absolute;
+	  pointer-events: none;
+	  content: '';
+	  width: 150px;
+	  height: 150px;
+	  background-repeat: no-repeat;
+	  background-position: left top;
+	  background-size: 100%;
+	  z-index: -1;
+	 
+  }
+  &:before {
+	  background-position: right top;
+	  transform: rotate(-90deg);
+	  right: 0;
+  }
+  &:after {
+	  background-position: right top;
+	  transform: rotate(180deg);
+	  left: 0;
+  }
+}
+
+.rood .mod-calltoaction {
+	&:after, &:before {	
+	  background-image: url(../images/stars-rood.svg);
+	}
+}
+
+.blauw .mod-calltoaction {
+	&:after, &:before {	
+	  background-image: url(../images/stars-blauw.svg);
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.mod-calltoaction {
+  	position: relative;
+  	&:after, &:before {
+  		width: 300px;
+  		height: 300px;
+	  }
+	}
+}
