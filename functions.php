@@ -10,3 +10,4 @@ include 'lib/gutenberg.php';
 include 'lib/cpt.php';
 include 'lib/hideusers.php';
 include 'lib/youtube.php';
+include 'lib/menu.php';

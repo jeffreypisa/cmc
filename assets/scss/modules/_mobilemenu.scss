@@ -46,6 +46,11 @@ body .mod-mobilemenu {
     text-align: left;
     ul.menu {
 		  padding: 30px 0px;
+      li.pll-parent-menu-item {
+        > a {
+          display: none;
+        }
+      }
 	  }
 		.sub {
 		  ul {

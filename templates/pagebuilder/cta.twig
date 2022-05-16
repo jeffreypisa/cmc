@@ -1,14 +1,14 @@
 <section class="mod-cta {% if item.k1_achtergrond == 'white' and item.k2_achtergrond == 'white' %} bg-white {% endif %} {% if item.minder_padding %} noblokpadding {% endif %} {% if item.alternatieve_kleur %} {% if options.kleurstelling == 'blauw' %} rood {% else %} blauw {% endif %}{% endif %}" >
 	<div class="kolombg k1 bg-{{ item.k1_achtergrond }}"></div>
 	<div class="kolombg k2 bg-{{ item.k2_achtergrond }}"></div>
-	{% if item.k1_layout == 'afbeeldingxl' %}
-		<div class="bg k1 d-none d-md-block" style="background-image: url({{ item.k1_afbeelding_enkel|resize(1024) }})" data-aos="fade-in" data-aos-duration="800" data-aos-delay="0"> </div>
+	{% if item.k1_layout == 'afbeeldingxl' or item.k1_layout == 'afbeeldingxl_contain' %}
+		<div class="bg k1 d-none d-md-block {% if item.k1_layout %}bg-contain{% endif %}"" style="background-image: url({{ item.k1_afbeelding_enkel|resize(1024) }})" data-aos="fade-in" data-aos-duration="800" data-aos-delay="0"> </div>
 		<div class="block bg-{{ item.k1_achtergrond }} d-md-none">
 			<div style="background-image: url({{ item.k1_afbeelding_enkel|resize(1024) }})" class="w-100"></div>
 		</div>
 	{% endif %}
-	{% if item.k2_layout == 'afbeeldingxl' %}
-		<div class="bg k2 d-none d-md-block" style="background-image: url({{ item.k2_afbeelding_enkel|resize(1024) }})" data-aos="fade-in" data-aos-duration="800" data-aos-delay="0"> </div>
+	{% if item.k2_layout == 'afbeeldingxl' or item.k2_layout == 'afbeeldingxl_contain' %}
+		<div class="bg k2 d-none d-md-block {% if item.k2_layout %}bg-contain{% endif %}" style="background-image: url({{ item.k2_afbeelding_enkel|resize(1024) }})" data-aos="fade-in" data-aos-duration="800" data-aos-delay="0"> </div>
 		<div class="block bg-{{ item.k2_achtergrond }} d-md-none">
 	  	<div style="background-image: url({{ item.k2_afbeelding_enkel|resize(1024) }})" class="w-100"></div>
 	  </div>
@@ -42,6 +42,7 @@
 							{% endif %}
 						</div>
 					{% elseif item.k1_layout == 'afbeeldingxl' %}
+					{% elseif item.k1_layout == 'afbeeldingxl_contain' %}
 					{% elseif item.k1_layout == 'afbeelding1' %}
 						{% if item.k1_afbeelding_enkel %}
 							<div class="blok-body w-100" data-aos="fade-right" data-aos-duration="800" data-aos-delay="0">
@@ -92,6 +93,7 @@
 							{% endif %}
 						</div>
 					{% elseif item.k2_layout == 'afbeeldingxl' %}
+					{% elseif item.k2_layout == 'afbeeldingxl_contain' %}
 					{% elseif item.k2_layout == 'afbeelding1' %}
 						{% if item.k2_afbeelding_enkel %}
 							<div class="blok-body w-100" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">

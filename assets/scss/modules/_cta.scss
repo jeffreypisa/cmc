@@ -216,6 +216,11 @@
 			&.k2 {
 				right: 0;
 			}
+			&.bg-contain {
+				background-size: contain;
+				background-position: top center;
+				background-repeat: no-repeat;
+			}
 		}
 		.kolom1, .kolom2 {
 			min-height: 440px;
