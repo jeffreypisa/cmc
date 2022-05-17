@@ -8946,7 +8946,8 @@ body.opensidemenu .mod-mobilemenu {
         top: 0;
         left: 10%;
         right: 0%;
-        width: 90%; }
+        width: 90%;
+        z-index: 0; }
       .mod-cta .afbeelding-container figure:nth-child(2) {
         bottom: 0%;
         left: 0;
