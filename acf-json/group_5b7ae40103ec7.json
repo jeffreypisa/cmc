@@ -35,7 +35,7 @@
                 "rood": "Rood",
                 "blauw": "Blauw"
             },
-            "default_value": [],
+            "default_value": false,
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -130,6 +130,25 @@
             "key": "field_5ca363d60f650",
             "label": "Contact",
             "name": "footer_contact",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_628624a786b72",
+            "label": "Tekst ipv menu onder CMC marketing",
+            "name": "footer_cmcmarketing",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -424,7 +443,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1597663133
+    "show_in_rest": 0,
+    "modified": 1652958398
 }

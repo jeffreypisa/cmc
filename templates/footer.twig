@@ -14,7 +14,11 @@
   				</div>
   				<div class="col-lg-6 blauw" data-aos="fade-in" data-aos-duration="800" data-aos-delay="100">
 		  			<h6 class="head"> CMC Marketing </h6>
-		  			{% include "footermenu.twig" with {'footermenu': footermenu_marketing.get_items} %}
+            {% if options.footer_cmcmarketing %}
+              {{ options.footer_cmcmarketing }}
+            {% else %}
+		  			 {% include "footermenu.twig" with {'footermenu': footermenu_marketing.get_items} %}
+            {% endif %}
   				</div>
   			</div>
   		</div>
